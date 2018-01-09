@@ -7,14 +7,13 @@ using Xamarin.Forms;
 
 namespace WhenToDig71
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
-
-			MainPage = new WhenToDig71.MainPage();
-		}
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
+            MainPage = new NavigationPage(new WhenToDig71.MainPage());
+        }    
 
 		protected override void OnStart ()
 		{

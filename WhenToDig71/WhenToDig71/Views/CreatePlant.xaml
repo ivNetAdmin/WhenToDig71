@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:plantVm="clr-namespace:WhenToDig71.ViewModels"
+             x:Class="WhenToDig71.Views.CreatePlant">
+    <ContentPage.BindingContext>
+        <plantVm:PlantViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Enter Plant Name"/>
+            <Entry Text="{Binding Plant.Name, Mode=TwoWay}"/>
+
+            <Label Text="Enter Plant Variety"/>
+            <Entry Text="{Binding Plant.Variety, Mode=TwoWay}"/>
+
+            <Label Text="Enter Plant Notes"/>
+            <Entry Text="{Binding Plant.Notes, Mode=TwoWay}"/>
+
+            <Button Text="Create" Command="{Binding CreateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

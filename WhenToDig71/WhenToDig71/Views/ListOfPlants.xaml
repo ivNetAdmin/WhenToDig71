@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:plantVm="clr-namespace:WhenToDig71.ViewModels"
+             x:Class="WhenToDig71.Views.ListOfPlants">
+    <ContentPage.BindingContext>
+        <plantVm:PlantViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Plants}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding PlantId}"/>
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Variety}"/>
+                            <Label Text="{Binding Notes}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
